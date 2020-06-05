@@ -1,0 +1,27 @@
+FIRST STEPS
+
+1.- Dowload and Install nodejs
+	"nodejs download"
+
+	in cmd:
+		node -v
+		npm -v
+
+2.- NPM
+	npm init
+	npm intall
+	npm install jquery
+
+3.- Visual Studio Code
+	"Visual Studio Code download"
+
+
+----------------------------------------------------------------------------------------
+
+FULL STACK
+	FrontEnd
+	BackEnd
+	Database
+
+
+	
