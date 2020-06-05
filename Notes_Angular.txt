@@ -20,8 +20,29 @@ FIRST STEPS
 
 FULL STACK
 	FrontEnd
+		TypeScript = JavasScript + Strong Type
 	BackEnd
+		Spring Boot 
 	Database
 
 
+
+----------------------------------------------------------------------------------------
+
+MODEN JAVASCRPIT AND TYPESCRIPT
+
+Modern javasripot supports:
+	Classes
+	Decorator are as Anotations
+	OOP
+	
+Javas scripts is Loosely Typed
+
+Typescript Typed:
+	value : type
+
+Functions can define type of aprameter and return
+
+Interface in Typescript
+	
 	
