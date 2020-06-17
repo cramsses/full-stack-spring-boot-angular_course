@@ -1,3 +1,5 @@
+**********************  SECTIONS ONE & TWO  **********************
+
 FIRST STEPS
 
 1.- Dowload and Install nodejs
@@ -44,5 +46,46 @@ Typescript Typed:
 Functions can define type of aprameter and return
 
 Interface in Typescript
+
+----------------------------------------------------------------------------------------
+
+ANGULAR CLI
+
+npm install -g @angular/cli
+npm install -g @angular/cli@version--->npm install -g @angular/cli@7.0.3
+	ng version ---> for check intallation
+
+ng new my-dream-app
+cd my-dream-app
+ng serve
+
+------------
+
+ng help --> for overview commands
+
+
+---Create project---
+
+Positionating in the the path derired
+
+ng new [name]
+	then the setup answering the default questions
+	- Routing -> YES
+	-  Style -> CSS
+	
+example ng new todo
+
+inside the "todo" folder:
+	
+ng serve -> For building the project
+			default localhost on port 4200
+		
+
+
+----------------------------------------------------------------------------------------
+
+
+
+
 	
 	
