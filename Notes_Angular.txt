@@ -4,12 +4,16 @@ FIRST STEPS
 
 Installation reference:
 	https://www.youtube.com/playlist?list=PLBBog2r6uMCQN4X3Aa_jM9qVjgMCHMWx6
- 
+ 	
+	
 
 1.- Dowload and Install nodejs
-	"nodejs download"
-
-	in cmd:
+	For Intalling NPM we need to install nodejs
+ 	In google search: "download nodejs"
+		Download and execute installer
+		Just follow de wizard with defaults
+		
+	For validate in cmd:
 		node -v
 		npm -v
 
