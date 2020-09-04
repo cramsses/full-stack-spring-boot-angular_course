@@ -2,6 +2,10 @@
 
 FIRST STEPS
 
+Installation reference:
+	https://www.youtube.com/playlist?list=PLBBog2r6uMCQN4X3Aa_jM9qVjgMCHMWx6
+ 
+
 1.- Dowload and Install nodejs
 	"nodejs download"
 
