@@ -17,10 +17,13 @@ Installation reference:
 		node -v
 		npm -v
 
-2.- NPM
+2.- NPM (Node Package Manager)
 	npm init
+		Iniit a project and create de file package.json
 	npm intall
+		Install dependencies declared in package.json
 	npm install jquery
+		Install jquery and add dependency in package.json
 
 3.- Visual Studio Code
 	"Visual Studio Code download"
