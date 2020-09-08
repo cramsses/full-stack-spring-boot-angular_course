@@ -42,7 +42,7 @@ FULL STACK
 
 ----------------------------------------------------------------------------------------
 
-MODEN JAVASCRPIT AND TYPESCRIPT
+MODERN JAVASCRPIT AND TYPESCRIPT
 
 Modern javasripot supports:
 	Classes
