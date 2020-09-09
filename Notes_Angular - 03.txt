@@ -12,11 +12,55 @@ For importing a project:
 
 
 ----------------------------------------------------------------------------------------
+Step 06 - Exploring CLI Commands
 
+IN angular.json are defined the commands
 
+ng lint --> Check standards rules in code
+			In "tslint.json" file are defied te rules
+			
+ng build --> Create "dsitr" folder
 
+bg test --> Run unit test (Framework Jasmine run with Karma)
+			Files:
+				"\karma.conf.js"
+				"src\app\app.component.spec.ts"
+				
+				
+ng e2e -->	End to end test with Selenium 
+			In folder "e2e"
+			protector is use and 
+----------------------------------------------------------------------------------------
+Step 07 - Exploring Angular CLI Project Structure
+
+src/app 	-->	Components and modules rest here
+
+src/assets 	-->	Images
+
+src/enviroments --> Configurations
+
+files:		
+	tsconfig.json --> typesript to javascript
+	README.md --> Documentation
+	package.json --> frameworks and tools specification
+	polyfills.ts --> browser compatibiliies
+	style.css --> Global Styles
+	test.ts --> For ng test command
+	When launch are loaded up:
+		main.ts and index.html
+	
+
+node_modules --> Where all packages are 
 
 ----------------------------------------------------------------------------------------
+Step 08 - Introduction to Angular Components - Basics
 
 
-----------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
