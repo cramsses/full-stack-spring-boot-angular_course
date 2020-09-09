@@ -19,7 +19,7 @@ Installation reference:
 
 2.- NPM (Node Package Manager)
 	npm init
-		Iniit a project and create de file package.json
+		Init a project and create de file package.json
 	npm intall
 		Install dependencies declared in package.json
 	npm install jquery
@@ -66,6 +66,12 @@ npm install -g @angular/cli
 npm install -g @angular/cli@version--->npm install -g @angular/cli@7.0.3
 	ng version ---> for check intallation
 
+For change version of cl in case errors appears whit ng new or ng serve command
+	npm uninstall -g @angular/cli
+	npm cache verify
+	# if npm version is < 5 then use `npm cache clean` 
+	npm install -g @angular/cli@latest
+
 ng new my-dream-app
 cd my-dream-app
 ng serve
@@ -74,10 +80,10 @@ ng serve
 
 ng help --> for overview commands
 
-
+ng version --> Show versions of diferent packages
 ---Create project---
 
-Positionating in the the path derired
+Positionating in the the path desired
 
 ng new [name]
 	then the setup answering the default questions
@@ -85,6 +91,8 @@ ng new [name]
 	-  Style -> CSS
 	
 example ng new todo
+	if vulnerabilties are found, npm audit show more detail and npm audit fix can solve some of them
+	
 
 inside the "todo" folder:
 	
