@@ -55,6 +55,59 @@ node_modules --> Where all packages are
 ----------------------------------------------------------------------------------------
 Step 08 - Introduction to Angular Components - Basics
 
+Angular Components
+	Usually a page is make of a set of components, example:
+		- Menu Component
+		- List Todos Component
+		- Footer Component
+		
+	Component
+		- Template (.component.html)
+		- Style (.component.css)
+		- Code (.component.ts)
+	
+	Decorator similar to Java Annottion
+	With a decorator its indicated ths something is a component
+		@Component
+		
+	Example
+		import { Component } from '@angular/core';
+
+		@Component({
+		  selector: 'app-root',
+		  templateUrl: './app.component.html',
+		  styleUrls: ['./app.component.css']
+		})
+
+		export class AppComponent {
+		  title = 'todo';
+		}
+		
+		
+	Imprtant concepts:
+	- Component
+	- Decorator
+	- Interpoltaion
+	- Data binding
+
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
