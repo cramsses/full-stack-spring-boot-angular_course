@@ -123,7 +123,7 @@ Create a new component:
 
 	Every ***Angular Component*** (@Component) has to be associated with an ***Angular Module*** (@NgModule)
 	
-	
+	The TS file created in its class implements OnInit
 	
 	
 	
@@ -131,6 +131,19 @@ Create a new component:
 	
 	
 ----------------------------------------------------------------------------------------
+Step 11 - Language Variations With an Example - Java, JavaScript and TypeScript
+
+In JavaScript one per module and one module per file.
+Module is how organizes classes in JavaScript
+
+
+	Package vs File
+
+	Scope of a class in TS: export and import keywords
+	
+	- constructor		--> contructor(){}
+	- methods			-->	ngOnInit(): void {}
+	- member variables	--> message : string = 'Welcomeeeeee'
 
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
