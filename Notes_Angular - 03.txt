@@ -126,10 +126,6 @@ Create a new component:
 	The TS file created in its class implements OnInit
 	
 	
-	
-	
-	
-	
 ----------------------------------------------------------------------------------------
 Step 11 - Language Variations With an Example - Java, JavaScript and TypeScript
 
@@ -144,7 +140,70 @@ Module is how organizes classes in JavaScript
 	- constructor		--> contructor(){}
 	- methods			-->	ngOnInit(): void {}
 	- member variables	--> message : string = 'Welcomeeeeee'
+	
 
+----------------------------------------------------------------------------------------
+Step 12 - Generating and Setting up Login Component
+
+ng generate component login
+Add inputs in components
+
+----------------------------------------------------------------------------------------
+Step 13 - Understanding Event Binding - Adding click event on Login Page
+
+
+Data binding 
+	Interpolation {{}}
+	Event binding  (event)=whatShouldYouDo()
+
+
+----------------------------------------------------------------------------------------
+Step 14 - Using ngModel with 2 Way Data Binding in Login Page
+
+Data binding
+	banana-in-a-boat-approach [()]
+	[(ngModel)] = attribute or member class  --> [(ngModel)]="username"
+
+In app.module.ts add
+	import { FormsModule } from '@angular/forms';
+In imports of app.module.ts add
+	FormsModule
+
+This is named TWO-DATA-Binding
+
+
+----------------------------------------------------------------------------------------
+Step 15 - Quick Review of Data Binding Approache
+
+
+
+
+
+----------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
