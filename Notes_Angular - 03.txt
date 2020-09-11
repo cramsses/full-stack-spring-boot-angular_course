@@ -91,8 +91,47 @@ Angular Components
 	- Data binding
 
 ----------------------------------------------------------------------------------------
+Step 09 - Introduction to Angular Components - Playing with AppComponent
+
+PLay Around with the component
+	The scope of the component element are just the component itself
+	
+	Work the basics of:
+		- Template (.component.html)
+		- Style (.component.css)
+		- Code (.component.ts)
+
 ----------------------------------------------------------------------------------------
+Step 10 - Generating Welcome Component with ng generate
+
+Note: Syntax of TS looks similar to Java class
+
+
+Create a new component:
+- Does not need to stops ng serve
+- ng generate in the project folder, there is no rollback:
+	ng generate component [nombre]
+	ng generate component welcome
+	
+	This create 4 files and update 1
+		CREATE src/app/welcome/welcome.component.html (22 bytes)
+		CREATE src/app/welcome/welcome.component.spec.ts (633 bytes)
+		CREATE src/app/welcome/welcome.component.ts (279 bytes)
+		CREATE src/app/welcome/welcome.component.css (0 bytes)
+		UPDATE src/app/app.module.ts (479 bytes)
+
+
+	Every ***Angular Component*** (@Component) has to be associated with an ***Angular Module*** (@NgModule)
+	
+	
+	
+	
+	
+	
+	
+	
 ----------------------------------------------------------------------------------------
+
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
