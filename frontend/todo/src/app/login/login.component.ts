@@ -8,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
 
   username = 'ramsses'
-  password = '1234566'
+  password = ''
+  errorMessage = 'Invalid Credentials'
+  invalidLogin = false
 
   constructor() { }
 
@@ -16,7 +18,12 @@ export class LoginComponent implements OnInit {
   }
 
   handleLogin(){
-    console.log(this.username)
+    //console.log(this.username)
+    if(this.username==="ramsses" && this.password==="dummy"){
+      this.invalidLogin = false
+    }else{
+      this.invalidLogin = true
+    }
   }
 
 }
