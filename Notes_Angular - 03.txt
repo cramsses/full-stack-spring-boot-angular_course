@@ -175,11 +175,19 @@ This is named TWO-DATA-Binding
 ----------------------------------------------------------------------------------------
 Step 15 - Quick Review of Data Binding Approache
 
+1.- Interpolation --> Data from component showing in view
+2.- Event Binding --> Bind event from evet to mehtod in component
+3.- Two way data binding --> ngModel for 2-way data binding map
 
-
+Angular Directive
+	ngModel
 
 
 ----------------------------------------------------------------------------------------
+Step 16 - Adding Hardcoded Authentication to Logic Component - ngIf directive
+
+angular attribute 
+	*ngIf
 
 
 
