@@ -189,25 +189,34 @@ Step 16 - Adding Hardcoded Authentication to Logic Component - ngIf directive
 angular attribute 
 	*ngIf
 
+----------------------------------------------------------------------------------------
+Step 17 - Implementing Routes for Login, Welcome and Error Componetns
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Routing, whitng serve there is a quertion ig the project needs routing:
+	- creates a file named app-routing.module.ts
+	- In Routes add the paths objects
+	
+	For example of routing:
+		const routes: Routes = [
+		  {path:'', component: LoginComponent},
+		  {path:'login', component: LoginComponent},
+		  {path:'welcome', component: WelcomeComponent},
+		  {path:'**', component: ErrorComponent}
+		];
+	
 
 ----------------------------------------------------------------------------------------
+Step 18 - Implementing Routing from Login to Welcome Component
+
+	NOte: In Angular DI is a built-in feature, just declare in cosntructor:
+		constructor(router: Router) { }
+		
+	Injection class Router and with navigate() method redirects path
+
 ----------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------
+Step 19 - Adding Route Parameter for Welcome Component
+
+
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
