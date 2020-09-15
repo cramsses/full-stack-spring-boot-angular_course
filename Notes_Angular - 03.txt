@@ -216,8 +216,19 @@ Step 18 - Implementing Routing from Login to Welcome Component
 ----------------------------------------------------------------------------------------
 Step 19 - Adding Route Parameter for Welcome Component
 
+	- Add paramter to path in routing
+		{path:'welcome/:name', component: WelcomeComponent}
+	- In componet accept that parameter
+		constructor(private route:ActivatedRoute) { }
+		
+	- If redirects from other component add parameter
+		this.router.navigate(['welcome',this.username])
+		
 
 ----------------------------------------------------------------------------------------
+Step 20 - Create List Todos Component with ng generate
+
+
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
