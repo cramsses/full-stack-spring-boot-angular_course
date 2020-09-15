@@ -228,6 +228,12 @@ Step 19 - Adding Route Parameter for Welcome Component
 ----------------------------------------------------------------------------------------
 Step 20 - Create List Todos Component with ng generate
 
+	Directive *ngFor:
+	
+		<tr *ngFor = "let todo of todos">
+            <td>{{todo.id}}</td>
+            <td>{{todo.description}}</td>
+        </tr>
 
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
