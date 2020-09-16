@@ -369,11 +369,12 @@ Same in login, welcome and todos. With boostrap classes
 Step 30 - Good Practice - Use RouterLink instead of href for Routes
 
 
-
-
+	href refreesh the enitre page
+	
+	routerLink to internal links use always
 
 ----------------------------------------------------------------------------------------
-
+Step 31 - Creating an Independent Authentication Service
 
 
 
