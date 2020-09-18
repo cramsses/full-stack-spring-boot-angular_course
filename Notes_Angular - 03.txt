@@ -423,6 +423,9 @@ Step 33 - Enabling Menu Links Based on User Authentication Token
 	  }
 
 	}
+	
+	- Or directly in html 
+		*ngIf="hardcodedAuthenticationService.isUserLoggedIn()"
 
 
 ----------------------------------------------------------------------------------------
