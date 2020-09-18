@@ -376,13 +376,60 @@ Step 30 - Good Practice - Use RouterLink instead of href for Routes
 ----------------------------------------------------------------------------------------
 Step 31 - Creating an Independent Authentication Service
 
+	First separate authentication logic creating a service
+	- ng generate service [name]
+		ng generate service hardcordedAuthentication
 
+		CREATE src/app/hardcoded-authentication.service.spec.ts (443 bytes)
+		CREATE src/app/hardcoded-authentication.service.ts (152 bytes)
+		
+	Best practice is to add a fodler name "service"
+		ng generate service service/[name]
+		
+	
+	The difference to other classes is: 
+	
+		@Injectable({
+		  providedIn: 'root'
+		})
+
+
+In the contructor of the componet desired inject de service.
+
+----------------------------------------------------------------------------------------
+Step 32 - Using Session Storage to Store User Authentication Token
+
+	sessionstorage.
+		setItem('key',value)
+		getItem('key')
+
+	
+
+----------------------------------------------------------------------------------------
+Step 33 - Enabling Menu Links Based on User Authentication Token
+	
+	*ngIf foe validate user is logged in in sessionstorage
+	- Creaate member variable in component and then call the service
+		
+	export class MenuComponent implements OnInit {
+
+	  isUserLoggedIn: boolean = false;
+
+	  constructor(public hardcodedAuthenticationService
+		: HardcodedAuthenticationService) { }
+
+	  ngOnInit(): void {
+		this.isUserLoggedIn = this.hardcodedAuthenticationService.isUserLoggedIn();
+	  }
+
+	}
 
 
 ----------------------------------------------------------------------------------------
 
-----------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------
+
+
+
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
