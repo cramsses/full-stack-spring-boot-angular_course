@@ -429,21 +429,75 @@ Step 33 - Enabling Menu Links Based on User Authentication Token
 
 
 ----------------------------------------------------------------------------------------
+Step 34 - Implementing Logout to remove User Authentication Token
+
+	ng generate component logout
+	
+	In authentication service add a method for logout:
+		logout(){
+			sessionStorage.removeItem('authenticateUser')
+		}
+	
+	And call it from the logut component 
+		ngOnInit(): void {
+			this.hardcodedAuthenticationService.logout();
+		}
+
+----------------------------------------------------------------------------------------
+Step 35 - Securing Components using Route Guards - Part 1
+
+	Routes activate with especific conditions
+		RouteGuardService
+		
+		generate service:
+			ng generate service service/routeGuard
+			
+		Implements the interface CanActive from '@angular/router'
+	
+	
+			export class RouteGuardService implements CanActivate {
+
+			  constructor(private hardcodedAuthenticationService: HardcodedAuthenticationService) { }
+
+			  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+				if (this.hardcodedAuthenticationService.isUserLoggedIn())
+				  return true;
+
+				return false;
+			  }
+
+			}
+			
+
+----------------------------------------------------------------------------------------
+Step 36 - Securing Components using Route Guards - Part 2
+
+	Use the RouteGuard Service
+		- Add in the Routes, multiple Guards can be added so are defined insidea an array
+		  {path:'welcome/:name', component: WelcomeComponent, canActivate:[RouteGuardService]}
+	In the route service redirect to login:
+		canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+			if (this.hardcodedAuthenticationService.isUserLoggedIn()){
+			  console.log('User is  logged in grant access')
+			  return true;
+			}
+			console.log('User not logged access denied')
+			this.router.navigate(['login']);
+			return false; 
+		  }
 
 
+----------------------------------------------------------------------------------------
+Step 37 - Quick Review - Authentication Service, Dependency Injection amd Route
 
+	Dependency Injection with @Injectable
+		- Service contain that tag when generated
+		- In the contructor of the componetn where it will bne uses is declared
+		
+	Guards are used for grant acces to a route, for make this generates a service tha implements the CanActive Interface
+		- In the rotes contant add the guard
+		
 
-----------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
