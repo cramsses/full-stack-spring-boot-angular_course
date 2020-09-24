@@ -54,12 +54,36 @@ Step 52 - Connecting Angular Frontend with Restful API
 
 ----------------------------------------------------------------------------------------
 Step 53 - Connecting Angular Frontend with Restful API 
-- 4 - Und…
+- 4 - Understanding Subscribe
 
+	Subscribe is asynchronus.
+	
+	So create a function ton mage the sucessful response, with an arrow function
+		this.service.executeHelloWorldBeanService().subscribe(
+			response => this.handleSuccessfulResponse(response)
+		);
 
+	In the data service we can define the type of th response:
+	1.- Create class bean:
+		export class HelloWorldBean{
+		  constructor(public message:string){}
+		}
+	2.- Like java generics add in the get:
+		 return this.http.get<HelloWorldBean>('http://uri');
+		
+
+	3.- In the Html and TS of the component define a member attribute for print in the view.
+		- TS:
+			this.welcomeMessageFromService = response.message;
+
+		- HTML:
+		<div class="container" *ngIf="welcomeMessageFromService">
+			<h2>Your customized welcome message</h2>
+			{{welcomeMessageFromService}}
+		</div>
 ----------------------------------------------------------------------------------------
 Step 54 - Connecting Angular Frontend with Restful API 
-- 5 - Han
+- 5 - Handlin error Response
 
 			
 
