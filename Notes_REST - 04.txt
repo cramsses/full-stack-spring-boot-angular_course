@@ -96,7 +96,14 @@ Install Java JDK
 		
 Install Eclipse
 	Download Eclipse
-
+		https://www.eclipse.org/downloads/
+	
+Meven test with SpringBoot 
+	start.spring.io
+		- generate
+		- unzip
+		- import existign maven project in eclipse
+		- 
 
 ----------------------------------------------------------------------------------------
  Step 45 - Initializing a RESTful Services Project with Spring Boot
@@ -121,42 +128,111 @@ Install Eclipse
 		File --> import
 			Existing Maven projects
 			
+		Run as java application
+			
+
+----------------------------------------------------------------------------------------
+Step 46 - Creating a Hello World Service
+
+	Create a simple controller
+		-Define as a restcontroller
+		
+		Create a method
+			Define http method - GET
+			Define URI
+			
+		//Controller
+		@RestController
+		public class HelloWorldController {
+			
+			
+			//GET
+			//URI - /hello-world
+			//method
+			@RequestMapping(method = RequestMethod.GET,path = "/hello-world")
+			public String helloWorld() {
+				return "Hello World";
+			}
+			
+
+		}
+
+
+
+
+
+----------------------------------------------------------------------------------------
+Step 47 - Enhancing the Hello World Service to return a Bean
+
+
+	Create a new method
+		And return Object HelloWorld
+	
+	Create the bean class HelloWorld
+	
+	
+	Note: if the bean has not a getter there will be an error of "No converter found"
+			The retunr will be auomatic converted to JSON
+			
+	
+----------------------------------------------------------------------------------------
+Step 48 - Quick Review of Spring Boot Auto Configuration and Dispatcher Servlet
+
+	Springboot autoconfiguration is responsible for configuration
+
+	Debug mode
+		- In application.properties
+			logging.level.org.springframework = debug
+
+	In debug in the console log:
+	
+	
+		--- DISPATCHERSERVLET ---
+		DispatcherServletAutoConfiguration matched:
+			- @ConditionalOnClass found required class 'org.springframework.web.servlet.DispatcherServlet' (OnClassCondition)
+			- found 'session' scope (OnWebApplicationCondition)
+
+
+		--- ERROR CONF ---
+		ErrorMvcAutoConfiguration matched:
+			- @ConditionalOnClass found required classes 'javax.servlet.Servlet', 'org.springframework.web.servlet.DispatcherServlet' (OnClassCondition)
+			- found 'session' scope (OnWebApplicationCondition)
+		
+		ErrorMvcAutoConfiguration#basicErrorController matched:
+			- @ConditionalOnMissingBean (types: org.springframework.boot.web.servlet.error.ErrorController; SearchStrategy: current) did not find any beans (OnBeanCondition)
+		
+		ErrorMvcAutoConfiguration#errorAttributes matched:
+			- @ConditionalOnMissingBean (types: org.springframework.boot.web.servlet.error.ErrorAttributes; SearchStrategy: current) did not find any beans (OnBeanCondition)
+		
+		ErrorMvcAutoConfiguration.DefaultErrorViewResolverConfiguration#conventionErrorViewResolver matched:
+			- @ConditionalOnBean (types: org.springframework.web.servlet.DispatcherServlet; SearchStrategy: all) found bean 'dispatcherServlet'; @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.web.servlet.error.ErrorViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+		
+		ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration matched:
+			- @ConditionalOnProperty (server.error.whitelabel.enabled) matched (OnPropertyCondition)
+			- ErrorTemplate Missing did not find error template view (ErrorMvcAutoConfiguration.ErrorTemplateMissingCondition)
+
+		
+		--- HTTPMESSAGECONVERTER ---
+		HttpMessageConvertersAutoConfiguration matched:
+			- @ConditionalOnClass found required class 'org.springframework.http.converter.HttpMessageConverter' (OnClassCondition)
+			- NoneNestedConditions 0 matched 1 did not; NestedCondition on HttpMessageConvertersAutoConfiguration.NotReactiveWebApplicationCondition.ReactiveWebApplication did not find reactive web application classes (HttpMessageConvertersAutoConfiguration.NotReactiveWebApplicationCondition)
+
+		--- JACKSON ---
+		JacksonAutoConfiguration matched:
+			- @ConditionalOnClass found required class 'com.fasterxml.jackson.databind.ObjectMapper' (OnClassCondition)
+
+
+
+		[/] DispatcherServlet is handling all the requests 
 
 ----------------------------------------------------------------------------------------
 
+Step 49 - Enhancing the Hello World Service with a Path Variable
 
 
-
-
-
-
-
-
-
-
-----------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-----------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	In the path add the variable
+		@GetMapping(path = "/hello-world-bean/path-variable/{name}")
+	
+	In the paramater add @PathVar
+		public HelloWorldBean helloWorldPathVariable(@PathVariable String name)
 
