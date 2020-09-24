@@ -1,0 +1,98 @@
+**********************  SECTIONS SIX **********************
+----------------------------------------------------------------------------------------
+Step 50 - Connecting Angular Frontend with Restful API 
+- 1 - Creating Data Service
+
+	Click a button in angular app that call a service in Java Springboot app
+		- Create in html a button to call a method
+			<button (click)="getWelcomeMessage()" class="btn btn-success" >Get Welcome Message</button> 
+		- Create in componet a method that will be used in view for the button
+			getWelcomeMessage(){}
+
+	Create service in Angular to call the API Service of Java
+		- ng generate service service/data/welcomeData
+		- In service create a method to invoke API
+	
+	Use the service in the component desire with DI defining in the contructor
+		- Define in contructor:
+			constructor(
+				private route:ActivatedRoute,
+				private service:WelcomeDataService) { }
+		- Use in method:
+			getWelcomeMessage(){
+				console.log('Calling Service Welcome');
+				this.service.executeHelloWorldBeanService();
+			  }
+			
+	
+----------------------------------------------------------------------------------------
+Step 51 - Connecting Angular Frontend with Restful API 
+- 2 - HttpClientModule
+
+HttpClient
+
+	Import manually
+		- import { HttpClient } from '@angular/common/http';
+	Add in constructor:
+		-  constructor(private http:HttpClient ) { }
+		
+	In app.module.ts add in import array:
+		- HttpClientModule 
+
+	
+----------------------------------------------------------------------------------------
+Step 52 - Connecting Angular Frontend with Restful API 
+- 3 - Understanding Observsble
+
+	Observable as the interface of asynchronus
+		- Request executes until subscribe
+		example: this.service.executeHelloWorldBeanService().subscribe();
+		This gives an error: CORS beacuse by default SPring Boot not allows
+	
+	Add @CrossOrigin in controller 
+
+
+----------------------------------------------------------------------------------------
+Step 53 - Connecting Angular Frontend with Restful API 
+- 4 - Und…
+
+
+----------------------------------------------------------------------------------------
+Step 54 - Connecting Angular Frontend with Restful API 
+- 5 - Han
+
+			
+
+----------------------------------------------------------------------------------------
+Step 55 - Calling Welcome HTTP Service with Path Variables
+
+
+
+----------------------------------------------------------------------------------------
+
+
+----------------------------------------------------------------------------------------
+
+
+----------------------------------------------------------------------------------------
+
+
+----------------------------------------------------------------------------------------
+
+
+----------------------------------------------------------------------------------------
+
+
+----------------------------------------------------------------------------------------
+
+
+----------------------------------------------------------------------------------------
+
+
+----------------------------------------------------------------------------------------
+
+
+----------------------------------------------------------------------------------------
+
+
+
