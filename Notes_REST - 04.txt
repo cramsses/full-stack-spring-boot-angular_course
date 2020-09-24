@@ -1,0 +1,162 @@
+**********************  SECTIONS FOUR**********************
+----------------------------------------------------------------------------------------
+Step 41 - What is a Web Service?
+	
+	W3C 
+		Software system designed to support interoperable 
+		machine-to-machine interaction over a network
+		
+		1.- machine-to-machine interaction
+		2.- interoperable - not platform dependent
+		3.- Over a network
+	
+----------------------------------------------------------------------------------------
+Step 42 -  Important How Questions related to Web Services
+
+	How?
+		Request <->Response
+	
+	Exchange Formats
+		XML		->eXtended Markup Language
+		JSON	->JS Object Notation
+	
+	Service Definition
+		Request/Response format	--> JSON/XML
+		Request Structure		--> How create a request
+		Response Structure		--> How it is the structure of response
+		Endpoint				--> How to call the service
+	
+----------------------------------------------------------------------------------------
+Step 43 - Web Services - Key Terminology
+
+	Request/Response
+		Request 	--> Input
+		Response	--> Output
+	Message Exchange Format
+		XML or JSON
+
+	Service Provider 	--> Server
+	Service Consumer	--> Client
+	
+	Service Definition	--> Contract
+	
+	Transport --> Expose over what
+		HTTP
+		MQ	--> Message Quee
+
+
+----------------------------------------------------------------------------------------
+Step 44 - Introduction to RESTful Web Services
+
+	REST 	--> REpresentational State Transfer
+			--> Over HTTP
+			--> Make best use of HTTP
+			
+	HTTP
+		- Request HEADER and BODY
+		- Methods		(GET, POST, DELETE,PUT
+						GET		Get
+						POST	Create
+						PUT		Update
+						DELETE	Delete
+						
+		- Status Code	(200, 404, ....)
+						200 Successful
+						404 Not Found
+						
+
+	Resource
+		- URI
+			/user/Ram/todos/1
+			/user/Ram/todos
+			/user/Ram
+		- Representations
+			XML
+			HTML
+			JSON
+			
+	REST
+		Exchange Format
+			No Restriction, JSON is popular
+		Transport
+			HTTP only
+		Service Definition
+			No Standard. WASL/Swagger/...
+			
+----------------------------------------------------------------------------------------
+
+
+**********************  SECTIONS FIVE **********************
+
+Install Java JDK
+	Download Java JDK
+	Follow Wizard
+	Check in command/terminal 
+		java -version
+		
+Install Eclipse
+	Download Eclipse
+
+
+----------------------------------------------------------------------------------------
+ Step 45 - Initializing a RESTful Services Project with Spring Boot
+
+	start.spring.io
+		- meven
+		- java
+		- spring boot
+		
+		- Group 	--> Like Package
+		- Artifact	--> Like Class Name
+
+		- Dependencies
+			- Web
+			- DevTools
+			- JPA
+			- H2
+			
+		Generate 
+		
+	Eclipse
+		File --> import
+			Existing Maven projects
+			
+
+----------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
