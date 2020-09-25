@@ -22,4 +22,12 @@ export class WelcomeDataService {
     return this.http.get<HelloWorldBean>('http://localhost:8080/hello-world-bean');
   }
 
+  // http://localhost:8080/hello-world-bean/path-variable/ramsses
+  executeHelloWorldBeanServiceWithPath(name){
+    //console.log('Executing Hello World Bean Service');
+    return this.http.get<HelloWorldBean>(`http://localhost:8080/hello-world-bean/path-variable/${name}`);
+  }
+
+  
+
 }
