@@ -27,7 +27,9 @@ public class HelloWorldController {
 	//hello-world-bean
 	@GetMapping(path = "/hello-world-bean")
 	public HelloWorldBean helloWorldBean() {
-		return new HelloWorldBean("Hello World - Chaged");
+		throw new RuntimeException("Some error has happenned");
+//		return new HelloWorldBean("Hello World - Chaged");
+		
 	}
 	
 	// //hello-world-bean/path-variable/ramsses

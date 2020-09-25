@@ -10,12 +10,12 @@ import { WelcomeDataService } from '../service/data/welcome-data.service';
 export class WelcomeComponent implements OnInit {
 
   message = 'Some Welcome Message';
-  welcomeMessageFromService:string;
+  welcomeMessageFromService: string;
   name = ''
   // ActivateRoute
   constructor(
-    private route:ActivatedRoute,
-    private service:WelcomeDataService) { }
+    private route: ActivatedRoute,
+    private service: WelcomeDataService) { }
 
   ngOnInit(): void {
     //console.log(this.message)
@@ -23,22 +23,28 @@ export class WelcomeComponent implements OnInit {
     this.name = this.route.snapshot.params['name']
   }
 
-  getWelcomeMessage(){
+  getWelcomeMessage() {
     console.log('Calling Service Welcome');
     // console.log(this.service.executeHelloWorldBeanService());
     // this.service.executeHelloWorldBeanService().subscribe();
     this.service.executeHelloWorldBeanService().subscribe(
-      response => this.handleSuccessfulResponse(response)
-      //response => console.log(response.message)
+      response => this.handleSuccessfulResponse(response),
+      error => this.handleErrorResponse(error)
     );
 
     console.log('Last line of getWelcomeMessage');
 
   }
 
-  handleSuccessfulResponse(response){
+  handleSuccessfulResponse(response) {
     this.welcomeMessageFromService = response.message;
     //console.log(response.message);
+  }
+  handleErrorResponse(error) {
+    console.log(error);
+    console.log(error.error);
+    console.log(error.error.message);
+    this.welcomeMessageFromService = error.error.message;
   }
 
 }
