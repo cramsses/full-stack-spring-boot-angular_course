@@ -85,6 +85,20 @@ Step 53 - Connecting Angular Frontend with Restful API
 Step 54 - Connecting Angular Frontend with Restful API 
 - 5 - Handlin error Response
 
+	In the suscribe add error manage, the secon paramter is for that purpouse:
+	
+		this.service.executeHelloWorldBeanService().subscribe(
+		  response => this.handleSuccessfulResponse(response),
+		  error => this.handleErrorResponse(error)
+		);
+
+	Add funtion for handle error:
+		handleErrorResponse(error) {
+			console.log(error);
+			console.log(error.error);
+			console.log(error.error.message);
+			this.welcomeMessageFromService = error.error.message;
+	  }
 			
 
 ----------------------------------------------------------------------------------------
