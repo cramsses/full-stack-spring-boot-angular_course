@@ -104,16 +104,20 @@ Step 54 - Connecting Angular Frontend with Restful API
 ----------------------------------------------------------------------------------------
 Step 55 - Calling Welcome HTTP Service with Path Variables
 
+	Acento fuerte o Backtick
+		Alt + 96
 
+	In data service in angular:
+		executeHelloWorldBeanServiceWithPath(name){
+			return this.http.get<HelloWorldBean>(`http://localhost:8080/hello-world-bean/path-variable/${name}`);
+		  }
 
-----------------------------------------------------------------------------------------
-
-
-----------------------------------------------------------------------------------------
-
-
-----------------------------------------------------------------------------------------
-
+		getWelcomeMessageWithParameter() {
+		this.service.executeHelloWorldBeanServiceWithPath(this.name).subscribe(
+			response => this.handleSuccessfulResponse(response),
+			error => this.handleErrorResponse(error)
+			);
+		}
 
 ----------------------------------------------------------------------------------------
 
