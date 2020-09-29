@@ -1,4 +1,4 @@
-package com.sohe.rest.webservices.restfulwebservices.controller;
+package com.sohe.rest.webservices.restfulwebservices.helloworld;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -6,8 +6,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 //import org.springframework.web.bind.annotation.RequestMapping;
 //import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.sohe.rest.webservices.restfulwebservices.beans.HelloWorldBean;
 
 //Controller
 @CrossOrigin(origins = "http://localhost:4200")
