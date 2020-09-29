@@ -26,13 +26,13 @@ public class TodoResource {
 	}
 	
 	//DELETE /users/{user_name}/todos/{todo_id}
-	@DeleteMapping(path = "/users/{user_name}/todos/{todo_id}")
+	@DeleteMapping(path = "/users/{username}/todos/{id}")
 	public ResponseEntity<Void> deleteTodo(
 			@PathVariable String username,@PathVariable long id) {
 		Todo todo = todoService.deleteById(id);
 		if (todo!=null) {
 			return ResponseEntity.noContent().build();
-		}
+		} 
 		return ResponseEntity.notFound().build();
 	}
 }
