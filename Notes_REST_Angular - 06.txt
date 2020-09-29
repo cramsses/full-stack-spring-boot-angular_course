@@ -218,7 +218,9 @@ Step 59 - Creating REST API to delete a Todo - 2 - Execute DELETE Request Method
 		Restlet Client - REST API Testing
 		(Talend API Tester - Free Edition)
 		
-	
+	Test with the client
+		Add in Header
+			Origin  
 
 ----------------------------------------------------------------------------------------
 
