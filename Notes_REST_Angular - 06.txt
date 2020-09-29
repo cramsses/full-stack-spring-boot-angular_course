@@ -120,17 +120,128 @@ Step 55 - Calling Welcome HTTP Service with Path Variables
 		}
 
 ----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+Step 56 - Designing RESTful services for TODO Resource
+
+	A CRUD (Create-Retrieve-Update-Delete)
+
+	1.- Retrieve all TODOs for a User
+		GET /users/{user_name}/todos
+		
+	2.- Delete a TODO for a User
+		DELETE /users/{user_name}/todos/{todo_id}
+		
+	3.- Edit a TODO
+		PUT /users/{user_name}/todos/{todo_id}
+	
+	4.- Create a new TODO
+		POST /users/{user_name}/todos/
+
+
+----------------------------------------------------------------------------------------
+Step 57 - Creating REST API for retrieving Todo List
+
+	1.- Retrieve all TODOs for a User
+		GET /users/{user_name}/todos
+
+		- Create Resource and mapping the GET path in the method.
+			Add tag @RestController to class
+			Add tag @Autowired for inject service
+			Create methdo and add tag GetMapping(path = "/users/{username}/todos")
+			Call service inside the method that is mappiong for retrieve list
+
+		- Create bussiness service class
+			Add tag @Service (@Component is more generic)
+			Crete method that return list (findAll())
+			
+----------------------------------------------------------------------------------------
+Step 58 - Connecting Angular Frontend with Todo List RESTful Service
+
+	In angular create a Data Service and method
+		ng generate service service/data/todoData
+		
+		 constructor(
+			private http:HttpClient
+		  ) { }
+
+		  retrieveAllTodos(username:string){
+			return this.http.get<Todo[]>(`http://localhost:8080/users/${username}/todos`);
+		  }
+		
+	In todo component call the subscribe and manage success response
+		
+		constructor(
+			private todoService:TodoDataService
+		) { }
+
+		ngOnInit(): void {
+			this.todoService.retrieveAllTodos('ramsses').subscribe(
+			  response =>{
+				console.log(response);
+				this.todos = response;
+			  }
+
+			)
+		}
+
+----------------------------------------------------------------------------------------
+Step 59 - Creating REST API to delete a Todo - 1 - Create DELETE Request Method
+
+	2.- Delete a TODO for a User
+		DELETE /users/{user_name}/todos/{todo_id}
+		
+	--- ResponseEntity ---
+	Create delete method to map the uri
+		@DeleteMapping(path = "/users/{user_name}/todos/{todo_id}")
+			public ResponseEntity<Void> deleteTodo(
+					@PathVariable String username,@PathVariable long id) {
+				Todo todo = todoService.deleteById(id);
+				if (todo!=null) {
+					return ResponseEntity.noContent().build();
+				}
+				return ResponseEntity.notFound().build();
+			}
+	
+
+	Create methods in service	
+		deleteById
+		findById
+
+	Create hash and equals methdo in pojo Todo
+	
+	
+----------------------------------------------------------------------------------------
+
+
+
+
+
+----------------------------------------------------------------------------------------
+
+
 
 
 ----------------------------------------------------------------------------------------
 
 
 ----------------------------------------------------------------------------------------
-
-
 ----------------------------------------------------------------------------------------
 
 
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+
+
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+
+
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+
+
+----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 
 
