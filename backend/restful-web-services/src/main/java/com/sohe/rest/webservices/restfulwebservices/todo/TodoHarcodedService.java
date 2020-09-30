@@ -26,7 +26,7 @@ public class TodoHarcodedService {
 	}
 	
 	public Todo save(Todo todo) {
-		if(todo.getId() ==-1) {
+		if(todo.getId() ==-1 || todo.getId() == 0) {
 			//Insert
 			todo.setId(++idCounter);
 			todos.add(todo);
@@ -35,9 +35,7 @@ public class TodoHarcodedService {
 			deleteById(todo.getId());
 			todos.add(todo);
 		}
-		
 		return todo;
-		
 	}
 	
 	public Todo deleteById(long id) {
