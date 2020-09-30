@@ -387,6 +387,42 @@ Step 66 - 1 - Creating REST API for Creating a Todo - POST Request Method
 
 	4.- Create a new TODO
 		POST /users/{user_name}/todos/
+		
+		In TodoHarcodedService :
+		
+			public Todo save(Todo todo) {
+				if(todo.getId() ==-1 || todo.getId() == 0) {
+					//Insert
+					todo.setId(++idCounter);
+					todos.add(todo);
+				}else {
+					//Update
+					deleteById(todo.getId());
+					todos.add(todo);
+				}
+				return todo;
+			}
+
+		In Controller:
+		
+			@PostMapping(path = "/users/{username}/todos")
+			public ResponseEntity<Void> updateTodo(
+					@PathVariable String username,
+					@RequestBody Todo todo) {
+				
+				Todo createdTodo = todoService.save(todo);
+				//Location
+				//Get current resource url
+				// /users/{username}/todos/{id}
+				
+				URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
+					.path("/{id}").buildAndExpand(createdTodo.getId()).toUri();
+				
+				return ResponseEntity.created(uri).build();
+			}
+		
+		
+
 
 ----------------------------------------------------------------------------------------
 
