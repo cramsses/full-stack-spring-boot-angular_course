@@ -332,9 +332,22 @@ Step 63 - Creating Retrieve Todo Service and Connect Angular Frontend
 ----------------------------------------------------------------------------------------
 Step 64 - Improve Todo Page Appearance
 
+	Fix the error:
+		"ERROR TypeError: Cannot read property 'description' of undefined"
+		This is because the Todo object is null
+	Initialize:
+		this.todo = new Todo(1,'',false,new Date());
 
-
-
+	Date format with pipe and separaate two way binding:
+		<fieldset class="form-group">
+			<label>Target Date</label>
+			<input type="date" 
+			[ngModel]="todo.targetDate | date:'yyyy-MM-dd' " 
+			(ngModelChange)="todo.targetDate = $event "
+			class="form-control" name="targetDate" required="required" />
+		</fieldset>
+		
+	
 ----------------------------------------------------------------------------------------
 
 
