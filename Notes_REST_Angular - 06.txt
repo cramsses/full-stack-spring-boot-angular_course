@@ -223,12 +223,36 @@ Step 59 - Creating REST API to delete a Todo - 2 - Execute DELETE Request Method
 			Origin  
 
 ----------------------------------------------------------------------------------------
+Step 60 - Adding Delete Todo Feature to Angular Frontend
 
-
-
+	Enhance TodoListCompoent
+	
+		HTML:
+		<div class="alert alert-success" *ngIf='message'>{{message}}</div>
+		
+		<td>
+			<button (click)= "deleteTodo(todo.id)" class="btn btn-warning">Delete</button>
+		</td>
+        
+		TS:
+		deleteTodo(id){
+			console.log(`delete todo ${id}`);
+			this.todoService.deleteTodo('ramsses',id).subscribe(
+			  response => {
+				console.log(response);
+				this.message = `Delete of Todo ${id} Successful!`;
+				this.refreshTodos();
+			  }
+			)
+		  }
+		
+	Method to call delete web service in dataService
+		deleteTodo(username:string, id:number){
+			return this.http.delete(`http://localhost:8080/users/${username}/todos/${id}`);
+		  }
 
 ----------------------------------------------------------------------------------------
-
+Step 61 - Creating Todo Component and Handle Routing
 
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
