@@ -253,6 +253,28 @@ Step 60 - Adding Delete Todo Feature to Angular Frontend
 
 ----------------------------------------------------------------------------------------
 Step 61 - Creating Todo Component and Handle Routing
+	
+	HTML:
+		Add button for Update
+			<td><button (click)= "updateTodo(todo.id)" class="btn btn-success">Update</button></td>
+	
+	TS:
+		Add metod for Update
+			updateTodo
+
+
+	Generate componet to redirect
+		ng generate component todo
+	
+	Add path to app-routing
+		{path:'todos/:id', component: TodoComponent, canActivate:[RouteGuardService]},
+	
+	Add redirect in component
+		updateTodo(id: number){
+		  console.log(`update ${id}`);
+		  this.router.navigate(['todos',id]);
+		}
+		
 
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
