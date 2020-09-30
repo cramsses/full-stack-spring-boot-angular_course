@@ -300,11 +300,41 @@ Step 62 - Designing Todo Page with Bootstrap Framework
 
 
 ----------------------------------------------------------------------------------------
-Step 63 - Creating Retrieve Tod0 Service and Connect Angular Frontend
+Step 63 - Creating Retrieve Todo Service and Connect Angular Frontend
 
+	Create Service backend method
+			@GetMapping(path = "/users/{username}/todos/{id}")
+			public Todo getTodo(@PathVariable String username,@PathVariable long id){
+				return todoService.finById(id);
+			}
+		
+	Add call to  service in DataService in Angular service
+		retrieveTodo(username:string, id:number){
+			return this.http.get<Todo>(`http://localhost:8080/users/${username}/todos/${id}`);
+		  }
 
+	Call service in component adding DataService and ActivatedRoute to get parameter
+		ngOnInit(): void {
+			this.id = this.route.snapshot.params['id'];
+			console.log('id = '+this.id)
+			this.todoService.retrieveTodo('ramsses', this.id)
+			.subscribe(
+			  
+			  data => {
+				this.todo = data;
+			  }
+			)
+		  }
+
+	Two way data binding in HTML with [(ngModel)]
+		[(ngModel)]="todo.description"
 
 ----------------------------------------------------------------------------------------
+Step 64 - Improve Todo Page Appearance
+
+
+
+
 ----------------------------------------------------------------------------------------
 
 
