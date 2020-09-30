@@ -22,6 +22,7 @@ export class Todo{
 export class ListTodosComponent implements OnInit {
 
   todos: Todo[] 
+  message: string;
   // = [
   //   new Todo(1,'Learn to Dance', false, new Date()),
   //   new Todo(2,'Pay the bills', false, new Date()),
@@ -41,13 +42,30 @@ export class ListTodosComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.todoService.retrieveAllTodos('ramsses').subscribe(
-      response =>{
-        console.log(response);
-        this.todos = response;
-      }
+    this.refreshTodos();
+  }
 
+refreshTodos(){
+  this.todoService.retrieveAllTodos('ramsses').subscribe(
+    response =>{
+      console.log(response);
+      this.todos = response;
+    }
+
+  )
+}
+
+  deleteTodo(id){
+    console.log(`delete todo ${id}`);
+    this.todoService.deleteTodo('ramsses',id).subscribe(
+      response => {
+        console.log(response);
+        this.message = `Delete of Todo ${id} Successful!`;
+        this.refreshTodos();
+      }
     )
   }
+
+
 
 }
