@@ -349,9 +349,45 @@ Step 64 - Improve Todo Page Appearance
 		
 	
 ----------------------------------------------------------------------------------------
+Step 65 - Creating REST API for Updating Todo - PUT Request Method
+
+	In TodoHarcodedService add methdo to save/update:
+			public Todo save(Todo todo) {
+				if(todo.getId() ==-1) {
+					//Insert
+					todo.setId(++idCounter);
+					todos.add(todo);
+				}else {
+					//Update
+					deleteById(todo.getId());
+					todos.add(todo);
+				}
+				return todo;
+			}
+			
+	3.- Edit a TODO
+		PUT /users/{user_name}/todos/{todo_id}
+		
+			@PutMapping(path = "/users/{username}/todos/{id}")
+			public ResponseEntity<Todo> updateTodo(
+					@PathVariable String username,
+					@PathVariable long id, 
+					@RequestBody Todo todo) {
+				Todo todoUpdated = todoService.save(todo);
+				return new ResponseEntity<Todo>(todo, HttpStatus.OK);
+			}
+	
+	
+
+
 
 
 ----------------------------------------------------------------------------------------
+Step 66 - 1 - Creating REST API for Creating a Todo - POST Request Method
+
+	4.- Create a new TODO
+		POST /users/{user_name}/todos/
+
 ----------------------------------------------------------------------------------------
 
 
