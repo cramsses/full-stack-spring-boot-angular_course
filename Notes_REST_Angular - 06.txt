@@ -277,7 +277,31 @@ Step 61 - Creating Todo Component and Handle Routing
 		
 
 ----------------------------------------------------------------------------------------
+Step 62 - Designing Todo Page with Bootstrap Framework
+
+	<h1>Todo</h1>
+
+	<div class="container">
+
+		<fieldset class="form-group">
+			<label>Description</label>
+			<input type="text" class="form-control" name="description" required="required" />
+		</fieldset>
+
+		<fieldset class="form-group">
+			<label>Target Date</label>
+			<input type="date" class="form-control" name="targetDate" required="required" />
+		</fieldset>
+
+		<button class="btn btn-success" (click)="saveTodo()">Save</button>
+
+
+	</div>
+
+
 ----------------------------------------------------------------------------------------
+Step 63 - Creating Retrieve Tod0 Service and Connect Angular Frontend
+
 
 
 ----------------------------------------------------------------------------------------
