@@ -20,6 +20,7 @@ export class TodoComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
+    this.todo = new Todo(1,'',false,new Date());
     console.log('id = '+this.id)
     this.todoService.retrieveTodo('ramsses', this.id)
     .subscribe(
