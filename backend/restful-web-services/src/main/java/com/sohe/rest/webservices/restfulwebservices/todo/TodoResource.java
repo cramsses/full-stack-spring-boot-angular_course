@@ -19,6 +19,12 @@ public class TodoResource {
 	@Autowired
 	private TodoHarcodedService todoService;
 
+	@GetMapping(path = "/users/{username}/todos/{id}")
+	public Todo getTodo(@PathVariable String username,@PathVariable long id){
+		
+		return todoService.finById(id);
+	}
+	
 	@GetMapping(path = "/users/{username}/todos")
 	public List<Todo> getAllTodos(@PathVariable String username){
 		
