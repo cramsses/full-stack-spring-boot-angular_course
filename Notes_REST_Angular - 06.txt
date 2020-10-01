@@ -482,13 +482,53 @@ Step 67 - Implementing Update Todo Feature in Angular Frontend
 		  }
 
 ----------------------------------------------------------------------------------------
+Step 68 - Implementing New Todo Feature in Angular Frontend
+
+	Add button to add:
+		<div class="row">
+			<button (click)= "addTodo()" class="btn btn-success">Add</button>
+		</div>
+
+	Add methoD to redirect:
+		addTodo(){
+		  console.log(`Create new Todo`); 
+		  this.router.navigate(['todos',-1]);
+		}
+		
+	Add call to WS in angular data service:	
+		createTodo(username:string,todo:Todo){
+			return this.http.post(
+			  `http://localhost:8080/users/${username}/todos`
+			  ,todo);
+		  }
+	
+	Call service in save method:
+		saveTodo(){
+			if(this.id===-1){
+			  // Create
+			  this.todoService.createTodo('ramsses',this.todo).subscribe(
+				data => {
+				  console.log(data);
+				  this.router.navigate(['/todos'])
+				}
+			  );
+			}else{
+			  // Update
+			  this.todoService.updateTodo('ramsses',this.id,this.todo).subscribe(
+				data => {
+				  console.log(data);
+				  this.router.navigate(['/todos'])
+				}
+			  );
+			}
+		}
 
 
 ----------------------------------------------------------------------------------------
-
+Step 69 - Improving Todo Form - Validation and Form Submit on Enter -ngSubmit
 
 ----------------------------------------------------------------------------------------
-
+Step 70 - Enhancing Validation Messages on Todo Page
 
 ----------------------------------------------------------------------------------------
 
