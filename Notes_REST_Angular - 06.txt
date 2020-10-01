@@ -425,13 +425,68 @@ Step 66 - 1 - Creating REST API for Creating a Todo - POST Request Method
 
 
 ----------------------------------------------------------------------------------------
+Step 66 - 2 - RESTful Web Services - Best Practices
+
+	Consumer First
+		Think of Consumer
+		Name of resources
+		Great Documentation(Swagger)
+
+	Make Best use of HttpClient
+		Request methods
+			GET
+			POST
+			PUT
+			DELETE
+			
+		Response Status
+			200 - SUCCESS
+			404 - RESOURCE NOT FOUND 
+			400 - BAD REQUEST
+			201 - CREATED
+			401 - UNAUTHORIZED
+			500 - SERVER ERROR
+	
+	No secure info in URI
+		
+	Use plurals
+		Prefer /users to /user
+		Prefer /users/1 to /user/1
+
+	Use NOUNS for Resources
+	
+	For Exceptions
+		Define a consistent approach
+			- /searh
+			
 
 
 ----------------------------------------------------------------------------------------
+Step 67 - Implementing Update Todo Feature in Angular Frontend
+
+	In dataService add method to call WS:
+		updateTodo(username:string, id:number,todo:Todo){
+			return this.http.put(
+			  `http://localhost:8080/users/${username}/todos/${id}`
+			  ,todo);
+		  }
+
+	In component add saveMethod wirh redirect --> router.navigate():
+		  saveTodo(){
+			this.todoService.updateTodo('ramsses',this.id,this.todo).subscribe(
+			  data => {
+				console.log(data);
+				this.router.navigate(['/todos'])
+			  }
+			);
+		  }
+
 ----------------------------------------------------------------------------------------
 
 
 ----------------------------------------------------------------------------------------
+
+
 ----------------------------------------------------------------------------------------
 
 
