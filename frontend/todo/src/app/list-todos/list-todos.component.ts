@@ -73,6 +73,11 @@ updateTodo(id: number){
   this.router.navigate(['todos',id]);
 }
 
+addTodo(){
+  console.log(`Create new Todo`); 
+  this.router.navigate(['todos',-1]);
+}
+
 
 
 }
