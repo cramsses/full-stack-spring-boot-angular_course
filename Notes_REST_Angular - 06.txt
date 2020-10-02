@@ -527,8 +527,34 @@ Step 68 - Implementing New Todo Feature in Angular Frontend
 ----------------------------------------------------------------------------------------
 Step 69 - Improving Todo Form - Validation and Form Submit on Enter -ngSubmit
 
+	
+	
+	Sumbit on Enter
+		There is no Form in previous components HTMLs
+		
+		1.- Add from tag in html to provide submit on Enter
+		
+		2.- Chnage clik event in button to submit event in form
+			Remove in button:
+				(click)="saveTodo()"
+			Add in button:
+				type="submit"
+			Add in form:
+				(ngSubmit)="saveTodo()"
+		
+			
+	Basic Validations
+		Template variable
+		
+		<form (ngSubmit)="!todoForm.invalid && saveTodo()" #todoForm="ngForm">
+		
+		required and minlegth are some validations 
+		
+	
 ----------------------------------------------------------------------------------------
 Step 70 - Enhancing Validation Messages on Todo Page
+
+
 
 ----------------------------------------------------------------------------------------
 
