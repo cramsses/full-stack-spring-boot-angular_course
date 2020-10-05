@@ -32,12 +32,52 @@ Step 72 - Setting up Spring Security
 	Basic authorization header as part og the request
 
 ----------------------------------------------------------------------------------------
+Step 73 - Configure standard userid and password
+
+	In application.properties
+		spring.security.user.name = user
+		spring.security.user.password = password
+
+
+
+----------------------------------------------------------------------------------------
+Step 74 - Enhancing Angular Welcome Data Service to use Basic Authentication
+
+	Block by CORS cause the Service has security implemented
+
+	Add header in frontend angula data service
+	
+		executeHelloWorldBeanServiceWithPath(name) {
+			//console.log('Executing Hello World Bean Service');
+			let basicAuthHeaderString = this.createBasicAuthenticationHttpHeader();
+			let headers = new HttpHeaders({
+				Authorization: basicAuthHeaderString
+			  })
+			return this.http.get<HelloWorldBean>(`http://localhost:8080/hello-world-bean/path-variable/${name}`,
+			{headers});
+		  }
+
+		createBasicAuthenticationHttpHeader() {
+			let username = 'ramsses';
+			let password = 'dummy';
+
+			let basicAuthHeaderString = 'Basic ' + window.btoa(username + ':' + password);
+			return basicAuthHeaderString;
+		  }
+
 
 
 ----------------------------------------------------------------------------------------
 
 
-----------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
 
 
 
