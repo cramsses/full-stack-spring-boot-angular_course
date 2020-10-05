@@ -554,6 +554,37 @@ Step 69 - Improving Todo Form - Validation and Form Submit on Enter -ngSubmit
 ----------------------------------------------------------------------------------------
 Step 70 - Enhancing Validation Messages on Todo Page
 
+	On CSS component:
+		.ng-invalid:not(form){
+			border-left: 5px solid red;
+		}
+
+	In HTML map with #temporalVariable:
+	    <div class="alert alert-warning" *ngIf="todoForm.dirty && todoForm.invalid">Enter valid values </div>
+		<div class="alert alert-warning" *ngIf="todoForm.dirty && targetDate.invalid">Enter valid target date </div>
+		<div class="alert alert-warning" *ngIf="todoForm.dirty && description.invalid">Enter at least 5 chars </div>
+
+
+		<form (ngSubmit)="!todoForm.invalid && saveTodo()" #todoForm="ngForm">
+		
+			<fieldset class="form-group">
+				<label>Description</label>
+				<input type="text"  #description="ngModel" 
+				[(ngModel)]="todo.description" class="form-control" name="description" required="required" minlength="5" />
+			</fieldset>
+		
+			<fieldset class="form-group">
+				<label>Target Date</label>
+				<input type="date" #targetDate="ngModel"
+				[ngModel]="todo.targetDate | date:'yyyy-MM-dd' " 
+				(ngModelChange)="todo.targetDate = $event "
+				class="form-control" name="targetDate" required="required" />
+			</fieldset>
+		
+			<button type="submit" class="btn btn-success" >Save</button>
+
+		</form>
+	
 
 
 ----------------------------------------------------------------------------------------
