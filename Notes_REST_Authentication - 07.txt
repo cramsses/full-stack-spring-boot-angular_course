@@ -66,10 +66,41 @@ Step 74 - Enhancing Angular Welcome Data Service to use Basic Authentication
 		  }
 
 
+	OPTIONS Method request Error
 
 ----------------------------------------------------------------------------------------
+Step 75 - Configure Spring Security to disable CSRF and enable OPTION Requests
 
+	In Angular Fronend:
+		The request First send OPTIONS Requests
+	
+	In Spring App
+		WebSecurityConfigurerAdapter is the default conf
+			Override config(HttpSecurity http) method 
+		
+		Create class: 
+			In package com.sohe.rest.webservices.restfulwebservices.basic.auth
+			SpringSecurityConfigurationBasicAuth taht extends from WSCA
+		
+	
+		@Configuration
+		@EnableWebSecurity
+		public class SpringSecurityConfigurationBasicAuth extends WebSecurityConfigurerAdapter {
+			
+			@Override
+			protected void configure(HttpSecurity http) throws Exception {
+				
+				http
+				.csrf().disable()
+				.authorizeRequests()
+				.antMatchers(HttpMethod.OPTIONS,"/**").permitAll()
+				.anyRequest().authenticated()
+				.and()
+				//.formLogin().and()
+				.httpBasic();
+			}
 
+		}
 
 
 
