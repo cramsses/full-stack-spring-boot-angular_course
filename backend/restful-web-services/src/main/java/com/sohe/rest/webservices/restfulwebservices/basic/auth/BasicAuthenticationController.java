@@ -11,7 +11,6 @@ public class BasicAuthenticationController {
 	@GetMapping(path = "/basicauth")
 	public AuthenticationBean helloWorldBean() {
 		return new AuthenticationBean("You are authenticated");
-		
 	}
 	
 	
