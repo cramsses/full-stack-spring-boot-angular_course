@@ -151,6 +151,12 @@ Step 77 - Configure HttpInterceptor as Provider in App Module
 ----------------------------------------------------------------------------------------
 Step 78 - Create Basic Authentication RESTful Service in Spring Boot
 
+	In package of basic.auth
+		Create bean and controller
+		
+	
+
+
 ----------------------------------------------------------------------------------------
 
 	
