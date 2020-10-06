@@ -134,10 +134,22 @@ Step 76 - Creating Angular HttpInterceptor to add Basic Auth Header
 	
 
 ----------------------------------------------------------------------------------------
+Step 77 - Configure HttpInterceptor as Provider in App Module
+
+	In app.module.ts:
+		
+		providers: [
+			{
+				provide: HTTP_INTERCEPTORS, 
+				useClass:HttpInterceptorBasicAuthService, 
+				multi:true
+			}
+		  ]
+	
 
 			
 ----------------------------------------------------------------------------------------
-
+Step 78 - Create Basic Authentication RESTful Service in Spring Boot
 
 ----------------------------------------------------------------------------------------
 
