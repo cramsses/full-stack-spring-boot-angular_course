@@ -164,17 +164,65 @@ Step 79 - Create Angular Basic Authentication Service
 	Copy from hardcoded service and add call to RESTful Service in Spring Boot
 	
 	
+----------------------------------------------------------------------------------------
+Step 80 - Connect Login Page to Basic Authentication Service - Part 1
+
+	basic-authentication.service.ts in angular pipe for succedd response:
 	
-	
-	
+	  executeAuthenticationService(username, password) {
+		let basicAuthHeaderString = 'Basic ' + window.btoa(username + ':' + password);
+		let headers = new HttpHeaders({
+			Authorization: basicAuthHeaderString
+		  })
+		
+		  return this.http.get<AuthenticationBean>(`http://localhost:8080/basicauth`,
+		{headers}).pipe(
+		  map(
+			data=>{
+			  sessionStorage.setItem('authenticateUser',username);
+			  console.log('Request succeed');
+			  return data;
+			}
+		  )
+		)
+		
+	  }
+	  
+	  
+	 in login.component.ts :
+	 
+	 handleBasicAuthLogin() {
+		console.log('executing sertvice....')
+		//if(this.username==="ramsses" && this.password==="dummy"){
+		this.basicAuthenticationService.executeAuthenticationService(this.username, this.password)
+		  .subscribe(
+			data => {
+			  console.log(data);
+			  
+			  this.router.navigate(['welcome', this.username]);
+			  this.invalidLogin = false;
+			  
+			},
+			error => {
+			  console.log(error);
+			  this.invalidLogin = true
+
+			}
+		  )
+
+	  }
+
+
+----------------------------------------------------------------------------------------
+Step 81 - Connect Login Page to Basic Authentication Service - Part 2
+
+
+
 ----------------------------------------------------------------------------------------
 
 
 
-----------------------------------------------------------------------------------------
 
-
-----------------------------------------------------------------------------------------
 
 ----------------------------------------------------------------------------------------
 
