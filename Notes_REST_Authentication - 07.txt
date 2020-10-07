@@ -230,16 +230,21 @@ Step 82 - Refactoring Angular Basic Authentication Service
 	Add remove ses of toke in logout method
 
 ----------------------------------------------------------------------------------------
-Step 83 - Refactoring HttpInterceptor to use Basic Authe
+Step 83 - Refactoring HttpInterceptor to use Basic Authentication Token
 
-
-
-----------------------------------------------------------------------------------------
-Step 84 - Refactoring HttpInterceptor to use Basic Authentication Token
-
+	Get token and username from sessionStorage to add to header request
+	
 
 ----------------------------------------------------------------------------------------
-Step 85 - 
+Step 84 - Best Practice - Use Constants for URLs and Tokens
+
+	Create a file in app for contants
+		app.contants.ts
+		
+	Add contanst in components for avoid typos
+
+----------------------------------------------------------------------------------------
+
 
 
 
