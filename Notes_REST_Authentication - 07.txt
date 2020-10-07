@@ -222,12 +222,32 @@ Step 81 - Connect Login Page to Basic Authentication Service - Part 2
 	Disable intercpetor becasue is hardcoded
 		Test login
 ----------------------------------------------------------------------------------------
+Step 82 - Refactoring Angular Basic Authentication Service
 
 
 
 
 
 ----------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
