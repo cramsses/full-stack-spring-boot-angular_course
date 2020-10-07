@@ -224,9 +224,10 @@ Step 81 - Connect Login Page to Basic Authentication Service - Part 2
 ----------------------------------------------------------------------------------------
 Step 82 - Refactoring Angular Basic Authentication Service
 
-
-
-
+	Remove hardcoded method for authenticateUser
+	Add sessionStorage for token 
+	Add methods for get user and token
+	Add remove ses of toke in logout method
 
 ----------------------------------------------------------------------------------------
 
