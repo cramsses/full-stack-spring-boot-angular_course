@@ -1,3 +1,7 @@
+<div class="alert alert-danger" *ngIf="!welcomeMessageFromService">
+    {{welcomeMessageFromService}}Error Consuming Service
+</div>
+
 <h1>Welcome!</h1>
 <div class="container">
     ¡Welcome {{name}}!<br/>  You can manage your todos <a routerLink="/todos">here</a>

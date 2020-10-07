@@ -230,7 +230,16 @@ Step 82 - Refactoring Angular Basic Authentication Service
 	Add remove ses of toke in logout method
 
 ----------------------------------------------------------------------------------------
+Step 83 - Refactoring HttpInterceptor to use Basic Authe
 
+
+
+----------------------------------------------------------------------------------------
+Step 84 - Refactoring HttpInterceptor to use Basic Authentication Token
+
+
+----------------------------------------------------------------------------------------
+Step 85 - 
 
 
 
