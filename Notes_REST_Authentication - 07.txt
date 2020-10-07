@@ -216,8 +216,11 @@ Step 80 - Connect Login Page to Basic Authentication Service - Part 1
 ----------------------------------------------------------------------------------------
 Step 81 - Connect Login Page to Basic Authentication Service - Part 2
 
+	Add y login.html
+		<button (click)=handleBasicAuthLogin() class="btn btn-success">Login</button>
 
-
+	Disable intercpetor becasue is hardcoded
+		Test login
 ----------------------------------------------------------------------------------------
 
 
