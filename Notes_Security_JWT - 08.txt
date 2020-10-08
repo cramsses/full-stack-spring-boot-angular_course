@@ -40,8 +40,45 @@ Step 85 - Introduction to JWT
 
 
 ----------------------------------------------------------------------------------------
-
-
+Step 86 - Importing JWT Framework into Eclipse
+	
+	In https://github.com/in28minutes/full-stack-with-angular-and-spring-boot
+		Search for JWT Components
+	
+	In eclipse
+		Refactor package for disable basic authentication
+			From:
+				com.sohe.rest.webservices.restfulwebservices.basic.auth
+			To:
+				com.sohe.rest.basic.auth
+		
+		Add properties of JWT in application.properties
+		
+		In pom.xml add depdnecy for JWT
+			<dependency>
+				<groupId>io.jsonwebtoken</groupId>
+				<artifactId>jjwt</artifactId>
+				<version>0.9.1</version>			
+			</dependency>
+			
+		Cretae a package
+			com.sohe.rest.webservices.restfulwebservices.jwt
+		Copy and paste all the classes from GITHUB. select package and rigth click for paste
+		Rigth click on package --> source --> organize import
+		
+		Create a new package
+			com.sohe.rest.webservices.restfulwebservices.jwt.resource
+		
+		Move 4 classes to new package
+			- 
+			- 
+			- 
+			- 
+		Then organize import for eachr class with errors
+		Remove from JwtUnAuthorizedResponseAuthenticationEntryPoint
+			import com.sohe.rest.webservices.restfulwebservices.jwt.resource.AuthenticationException
+		The organize import fr the spring AuthenticationException
+		
 ----------------------------------------------------------------------------------------
 
 
