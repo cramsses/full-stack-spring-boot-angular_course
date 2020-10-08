@@ -111,10 +111,12 @@ Step 88 - Executing JWT Resources - Get Token and Refresh
 		http://localhost:8080/refresh
 
 ----------------------------------------------------------------------------------------
+Step 89 - Understanding JWT Spring Security Framework Setup
 
+	Review TODO
 
 ----------------------------------------------------------------------------------------
-
+Step 90 - Creating a New User with Encoded Password
 
 ----------------------------------------------------------------------------------------
 
