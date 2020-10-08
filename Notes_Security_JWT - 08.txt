@@ -70,20 +70,45 @@ Step 86 - Importing JWT Framework into Eclipse
 			com.sohe.rest.webservices.restfulwebservices.jwt.resource
 		
 		Move 4 classes to new package
-			- 
-			- 
-			- 
-			- 
+			- AuthenticationException.java
+			- JwtAuthenticationRestController.java
+			- JwtTokenRequest.java
+			- JwtTokenResponse.java
+			
 		Then organize import for eachr class with errors
 		Remove from JwtUnAuthorizedResponseAuthenticationEntryPoint
 			import com.sohe.rest.webservices.restfulwebservices.jwt.resource.AuthenticationException
 		The organize import fr the spring AuthenticationException
 		
 ----------------------------------------------------------------------------------------
+Step 87 - Quick Tip - Resolving JWT Compilation Errors
 
+	If necessary go to 00-00-Final.md in github
+	find /jwt/
+	Copy code of classes with compilations errors
 
 ----------------------------------------------------------------------------------------
+Step 88 - Executing JWT Resources - Get Token and Refresh
 
+	Make a POST request to:
+		http://localhost:8080/authenticate
+	Add json body:
+		{
+			"username": "in28minutes",
+			"password": "dummy" 
+		}
+		
+	This will return a token like this:
+		{
+			"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpbjI4bWludXRlcyIsImV4cCI6MTYwMjc5Nzc0MywiaWF0IjoxNjAyMTkyOTQzfQ.lcoiZA3MNLC0wjohicSFeDWbz70gYY-DSQ3p0SVNBYlsmK7JvAOsgY0lcJQ4WlmS1E5eOw2mbk67c8cB3CLuxg"
+		}
+		
+	This tokes has to be added in the request. For verify just copy in io,jwt and add secreteWord
+	In request headers add	
+		Auhtorization  Bearer "token"
+	
+	For refresh call to get new token:
+		http://localhost:8080/refresh
 
 ----------------------------------------------------------------------------------------
 
