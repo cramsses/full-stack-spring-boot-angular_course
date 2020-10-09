@@ -113,12 +113,27 @@ Step 88 - Executing JWT Resources - Get Token and Refresh
 ----------------------------------------------------------------------------------------
 Step 89 - Understanding JWT Spring Security Framework Setup
 
-	Review TODO
+	Review 
 
 ----------------------------------------------------------------------------------------
 Step 90 - Creating a New User with Encoded Password
 
+	In root package create a class BcryptEncoderTest with main method
+		Encryp password with BCryptPasswordEncoder to add
+	
+	Add user in JwtInMemoryUserDetailsService
+		
+		  static {
+			  inMemoryUserList.add(new JwtUserDetails(1L, "in28minutes",
+						"$2a$10$3zHzb.Npv1hfZbLEU5qsdOju/tk2je6W6PnNnY.c1ujWPcZh4PL6e", "ROLE_USER_2"));
+			  
+			  inMemoryUserList.add(new JwtUserDetails(2L, "ramsses",
+						"$2a$10$6HRdYK5TpWVYgr2vIBzvB.EGnOG.AKt/qP2X78hqnUvhwqJ9GK0AS", "ROLE_USER_2"));
+		  }
+
+
 ----------------------------------------------------------------------------------------
+
 
 ----------------------------------------------------------------------------------------
 
