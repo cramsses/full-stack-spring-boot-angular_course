@@ -17,7 +17,7 @@ export class TodoDataService {
   }
 
   deleteTodo(username:string, id:number){
-    return this.http.delete(`${API_URL}/users/${username}/todos/${id}`);
+    return this.http.delete(`${TODO_JPA_API_URL}/users/${username}/todos/${id}`);
   }
 
   retrieveTodo(username:string, id:number){
@@ -26,13 +26,13 @@ export class TodoDataService {
 
   updateTodo(username:string, id:number,todo:Todo){
     return this.http.put(
-      `${API_URL}/users/${username}/todos/${id}`
+      `${TODO_JPA_API_URL}/users/${username}/todos/${id}`
       ,todo);
   }
 
   createTodo(username:string,todo:Todo){
     return this.http.post(
-      `${API_URL}/users/${username}/todos`
+      `${TODO_JPA_API_URL}/users/${username}/todos`
       ,todo);
   }
 
