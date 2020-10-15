@@ -42,7 +42,23 @@ Step 92 - Setting up Todo Entity and Populating Data
 		values (10003,'in28minutes','Learn MIcroservices',sysdate(),false); 
 	
 ----------------------------------------------------------------------------------------
+Step 93 - Connecting GET REST APIs to JPA Repository
 
+BACKEND
+	Copy TodoResource as TodoJpaResource
+	
+	JPA Repository for call entity
+		Use findByID builtin method
+		Create findByUsername method in interface
+		
+	In controller change service to jparepository for retrieve data
+	
+	
+FRONTEND
+	Add URL to constants
+		export const TODO_JPA_API_URL ="http://localhost:8080/jpa"
+		
+	Change URL in data service for retrieveAll and retrieveTodo
 
 ----------------------------------------------------------------------------------------
 
