@@ -60,10 +60,23 @@ FRONTEND
 		
 	Change URL in data service for retrieveAll and retrieveTodo
 
-----------------------------------------------------------------------------------------
-
 
 ----------------------------------------------------------------------------------------
+Step 94 - Connecting POST, PUT and DELETE REST APIs to JPA Repository
+
+BACKEND
+	Delete
+		todoJpaRepository.deleteById(id);
+	Update
+		Todo todoUpdated = todoJpaRepository.save(todo);
+	Create
+		todo.setUsername(username);
+		Todo createdTodo = todoJpaRepository.save(todo);
+
+FRONTEND
+	Change URL in data service for saveTodo
+----------------------------------------------------------------------------------------
+
 
 ----------------------------------------------------------------------------------------
 
