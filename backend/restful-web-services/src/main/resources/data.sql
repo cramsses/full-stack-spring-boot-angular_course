@@ -11,3 +11,6 @@ insert into todo(id, username,description,target_date,is_done)
 values (10005,'ramsses','Learn Data JPA',sysdate(),false); 
 insert into todo(id, username,description,target_date,is_done) 
 values (10006,'ramsses','Learn MIcroservices',sysdate(),false); 
+
+insert into cliente(id, nombre,ap_paterno,ap_materno,fecha_registro) 
+values (10004,'Edgar Ramsses','Solis','Hernandez',sysdate()); 
