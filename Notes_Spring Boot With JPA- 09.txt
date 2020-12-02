@@ -27,9 +27,14 @@ Step 92 - Setting up Todo Entity and Populating Data
 		spring.datasource.url=jdbc:h2:mem:testdb
 		spring.data.jpa.repositories.bootstrap-mode=default
 	
+	**************
 	To check in memory database:
 		http://localhost:8080/h2-console
-		
+		In the JDBC URL (like in aplication.properties):
+			jdbc:h2:mem:testdb
+		Connect
+	**************	
+	
 	Create data.sql in src/main/resources:
 	
 		insert into todo(id, username,description,target_date,is_done) 

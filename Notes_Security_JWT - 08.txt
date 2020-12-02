@@ -103,7 +103,7 @@ Step 88 - Executing JWT Resources - Get Token and Refresh
 			"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpbjI4bWludXRlcyIsImV4cCI6MTYwMjc5Nzc0MywiaWF0IjoxNjAyMTkyOTQzfQ.lcoiZA3MNLC0wjohicSFeDWbz70gYY-DSQ3p0SVNBYlsmK7JvAOsgY0lcJQ4WlmS1E5eOw2mbk67c8cB3CLuxg"
 		}
 		
-	This tokes has to be added in the request. For verify just copy in io,jwt and add secreteWord
+	This token has to be added in the request. For verify just copy in io,jwt and add secreteWord
 	In request headers add	
 		Auhtorization  Bearer "token"
 	
